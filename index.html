@@ -37,7 +37,7 @@
                         <a href="#about" class="nav__link">關於我</a>
                     </li>
                     <li class="nav__item">
-                        <a href="#project" class="nav__link">作品</a>
+                        <a href="#projects" class="nav__link">作品</a>
                     </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">聯絡我</a>
@@ -156,7 +156,7 @@
         </section>
 
         <!-- Skills -->
-        <section class="skill section">
+        <section class="skill section" id="skill">
             <h2 class="section__title-2">
                 <span>Skills.</span>
             </h2>
@@ -265,18 +265,21 @@
                     <form action="" class="contact__form" id="contact-form">
                         <div class="contact__group">
                             <div class="contact__box">
-                                <input type="text" name="user_name" class="contact__input" id="name" required placeholder="姓氏">
+                                <input type="text" name="user_name" class="contact__input" id="name" required
+                                    placeholder="姓氏">
                                 <label for="name" class="contact__label">姓氏</label>
                             </div>
 
                             <div class="contact__box">
-                                <input type="email" name="user_email" class="contact__input" id="email" required placeholder="電子郵件">
+                                <input type="email" name="user_email" class="contact__input" id="email" required
+                                    placeholder="電子郵件">
                                 <label for="email" class="contact__label">電子郵件</label>
                             </div>
                         </div>
 
                         <div class="contact__box">
-                            <input type="text" name="user_subject" class="contact__input" id="subject" required placeholder="主旨">
+                            <input type="text" name="user_subject" class="contact__input" id="subject" required
+                                placeholder="主旨">
                             <label for="subject" class="contact__label">主旨</label>
                         </div>
 
@@ -331,12 +334,37 @@
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer__container container grid">
+            <ul class="footer__links">
+                <li>
+                    <a href="#about" class="footer__link">關於我</a>
+                </li>
 
+                <li>
+                    <a href="#skill" class="footer__link">技能</a>
+                </li>
+
+                <li>
+                    <a href="#projects" class="footer__link">作品</a>
+                </li>
+            </ul>
+
+            <span class="footer__copy">
+                 &#169; All Rights Reserved By
+                 <a href="">John YU.</a>   
+            </span>
+        </div>
     </footer>
+
+    <!-- Scroll Up -->
+     <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-s-fill"></i>
+     </a>
+
 
     <!-- Email JS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script src="main.js"></script>
-
+</body>
 </html>
