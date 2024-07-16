@@ -74,10 +74,10 @@ const scrollActive = () => {
     const scrollDown = window.scrollY
 
     sections.forEach(current => {
-        const sectionHeight = current.offsetHeight, 
-              sectionTop = current.offsetTop - 58,
-              sectionId = current.getAttribute('id'),
-              sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+        const sectionHeight = current.offsetHeight,
+            sectionTop = current.offsetTop - 58,
+            sectionId = current.getAttribute('id'),
+            sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
 
         if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
             sectionsClass.classList.add('active-link')
@@ -89,7 +89,7 @@ const scrollActive = () => {
 window.addEventListener('scroll', scrollActive)
 
 // Dark Light Theme
-const themeButton = document.getElementById('theme-button') 
+const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'ri-sun-line'
 
@@ -98,13 +98,13 @@ const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
 // We obtain the current theme that the interface has by validating the dark-theme class 
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light' 
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'ri-contrast-2-line' : 'ri-sun-line'
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
-// If the validation is fulfilled, we ask what the issue was to know if we activated or dec 
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'] (darkTheme) 
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or dec 
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
     themeButton.classList[selectedIcon === 'ri-contrast-2-line' ? 'add' : 'remove'](iconTheme)
 }
 
@@ -112,11 +112,24 @@ if (selectedTheme) {
 themeButton.addEventListener('click', () => {
 
     // Add or remove the dark / icon theme 
-    document.body.classList.toggle(darkTheme) 
+    document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
 
     // We save the theme and the current icon that the user chose 
-    localStorage.setItem('selected-theme', getCurrentTheme()) 
+    localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
-    
+
+// SCROLL REVEAL ANIMATION
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2500,
+    delay: 400,
+    // reset: true // Animations repeat
+})
+sr.reveal(`.home__perfil`, { origin: 'right' }) 
+sr.reveal(`.home__name, .home__info, .about__container, .section__title-1,
+        about__info` , { origin: 'left' })
+
+
